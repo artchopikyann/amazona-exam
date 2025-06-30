@@ -1,0 +1,325 @@
+.product-details-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    align-items: flex-start;
+}
+
+.product-details-loading,
+.product-details-error,
+.product-details-not-found {
+    text-align: center;
+    padding: 60px 20px;
+    font-size: 1.3em;
+    color: #444;
+    width: 100%;
+}
+
+.product-details-error {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.product-image-section {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.product-detail-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+.product-info-section {
+    flex: 2;
+    min-width: 300px;
+    padding: 10px;
+}
+
+.product-title {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.2;
+}
+
+.product-brand {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+.product-category {
+    font-size: 1.1em;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.product-rating {
+    margin-bottom: 15px;
+    color: #f0c14b;
+}
+
+.product-rating .star {
+    font-size: 1.3em;
+    display: inline-block;
+    color: #dcdcdc;
+}
+
+.product-rating .star.filled {
+    color: #f0c14b;
+}
+
+.product-reviews-count {
+    font-size: 0.9em;
+    color: #777;
+    margin-left: 8px;
+}
+
+.product-price {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #b12704;
+    margin-top: 20px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.product-description {
+    font-size: 1em;
+    color: #444;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.product-stock-status {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 8px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+}
+
+.product-stock-status .in-stock {
+    color: #28a745;
+}
+
+.product-stock-status .out-of-stock {
+    color: #dc3545;
+}
+
+.product-quantity-selector {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.product-quantity-selector label {
+    font-size: 1em;
+    color: #555;
+    font-weight: bold;
+}
+
+.quantity-selector {
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    background-color: #fcfcfc;
+    cursor: pointer;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.add-to-cart-button {
+    background-color: #ff9900;
+    color: #111;
+    border: 1px solid #cc7700;
+    border-radius: 5px;
+    padding: 12px 25px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+}
+
+.add-to-cart-button:hover {
+    background-color: #e68a00;
+    border-color: #b36b00;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.add-to-cart-button:disabled {
+    background-color: #cccccc;
+    border-color: #999999;
+    color: #666666;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+@media (max-width: 992px) {
+    .product-details-container {
+        padding: 25px;
+        margin: 30px auto;
+        gap: 25px;
+    }
+
+    .product-title {
+        font-size: 2.2em;
+    }
+
+    .product-brand {
+        font-size: 1.1em;
+    }
+
+    .product-category {
+        font-size: 1em;
+    }
+
+    .product-price {
+        font-size: 2.3em;
+    }
+
+    .product-description {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-details-container {
+        flex-direction: column;
+        padding: 20px;
+        margin: 20px auto;
+        gap: 20px;
+        border-radius: 10px;
+    }
+
+    .product-image-section {
+        min-width: unset;
+        max-width: 100%;
+        padding: 10px;
+    }
+
+    .product-info-section {
+        min-width: unset;
+        padding: 0;
+    }
+
+    .product-title {
+        font-size: 2em;
+        text-align: center;
+    }
+
+    .product-brand,
+    .product-category,
+    .product-rating,
+    .product-price,
+    .product-description,
+    .product-stock-status,
+    .product-quantity-selector {
+        text-align: center;
+    }
+
+    .product-price {
+        font-size: 2.2em;
+    }
+
+    .add-to-cart-button {
+        max-width: 100%;
+        margin: 10px auto 0 auto; /* Center button */
+        display: block; /* Ensure it takes full width for centering */
+    }
+
+    .product-quantity-selector {
+        justify-content: center; /* Center quantity controls */
+    }
+}
+
+@media (max-width: 480px) {
+    .product-details-container {
+        padding: 15px;
+        margin: 15px auto;
+        border-radius: 8px;
+    }
+
+    .product-image-section {
+        padding: 8px;
+    }
+
+    .product-detail-image {
+        max-height: 300px; /* Reduce image height on very small screens */
+    }
+
+    .product-title {
+        font-size: 1.8em;
+    }
+
+    .product-brand {
+        font-size: 1em;
+    }
+
+    .product-category {
+        font-size: 0.9em;
+    }
+
+    .product-rating .star {
+        font-size: 1.1em;
+    }
+
+    .product-reviews-count {
+        font-size: 0.8em;
+    }
+
+    .product-price {
+        font-size: 2em;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+    }
+
+    .product-description {
+        font-size: 0.9em;
+        margin-bottom: 20px;
+    }
+
+    .product-stock-status {
+        font-size: 1em;
+    }
+
+    .product-quantity-selector label {
+        font-size: 0.95em;
+    }
+
+    .quantity-selector {
+        padding: 8px 12px;
+        font-size: 0.95em;
+    }
+
+    .add-to-cart-button {
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+}
